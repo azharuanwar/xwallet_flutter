@@ -78,6 +78,109 @@ class LoginPage extends StatelessWidget {
                 ],
               ),
             ),
+            SizedBox(
+              height: 24,
+            ),
+            Container(
+              margin: EdgeInsets.only(left: defaultMargin),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Password',
+                    style: textGeneral.copyWith(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w400,
+                        color: whiteColor),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 10),
+                    width: 315,
+                    height: 45,
+                    decoration:
+                        BoxDecoration(borderRadius: BorderRadius.circular(40)),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        hintText: 'Enter Your Email',
+                        hintStyle: textGeneral.copyWith(
+                            fontSize: 12, color: darkColor),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: darkColor),
+                          borderRadius: BorderRadius.circular(40),
+                        ),
+                        border: OutlineInputBorder(),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Padding(
+              padding: EdgeInsets.only(right: defaultMargin),
+              child: Align(
+                alignment: Alignment.centerRight,
+                child: Text(
+                  'Forgot Password?',
+                  style: textGeneral.copyWith(
+                      fontSize: 14, color: Color(0xff2466FF)),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 24,
+            ),
+            Center(
+              child: Column(
+                children: [
+                  Container(
+                    // margin: EdgeInsets.only(top: 14),
+                    width: 315,
+                    height: 55,
+                    decoration: BoxDecoration(
+                      color: primaryColor,
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Text(
+                        'Login',
+                        style: textGeneral.copyWith(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                            color: whiteColor),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 24,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Dont have account? ',
+                        style: textGeneral.copyWith(
+                            color: whiteColor, fontSize: 12),
+                      ),
+                      InkWell(
+                        onTap: () {},
+                        child: Text(
+                          'Sign Up',
+                          style: textGeneral.copyWith(
+                              color: primaryColor,
+                              fontSize: 12,
+                              fontWeight: FontWeight.w600),
+                        ),
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ),
           ],
         ),
       );
