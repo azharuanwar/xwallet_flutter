@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:xwallet/theme.dart';
 import 'package:xwallet/widget/menu_widget.dart';
+import 'package:xwallet/widget/transaction_widget.dart';
 
 class HomePage extends StatelessWidget {
   // const HomePage({ Key? key }) : super(key: key);
@@ -224,45 +225,15 @@ class HomePage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(15),
                 color: backgroundColor1,
               ),
-              child: Column(
-                children: [
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 17),
-                    child: Row(
-                      children: [
-                        Container(
-                          width: 8,
-                          height: 8,
-                          decoration: BoxDecoration(
-                            color: greenLightColor,
-                            shape: BoxShape.circle,
-                          ),
-                        ),
-                        SizedBox(
-                          width: 9,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Steam Game',
-                              style: textGeneral.copyWith(
-                                color: whiteColor,
-                                fontSize: 12,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                            Text(
-                              '-Rp. 95.000',
-                              style: textGeneral.copyWith(
-                                  fontSize: 10, color: greyColor),
-                            )
-                          ],
-                        )
-                      ],
-                    ),
-                  ),
-                ],
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 17),
+                child: Column(
+                  children: [
+                    TransactionWidget(),
+                    TransactionWidget(),
+                    TransactionWidget(),
+                  ],
+                ),
               ),
             ),
           ],
