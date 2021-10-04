@@ -10,6 +10,8 @@ Color primaryColor = Color(0xff2466FF);
 Color whiteColor = Color(0xffFFFFFF);
 Color greyColor = Color(0xffF4F5FC);
 Color darkColor = Color(0xff3D4960);
+Color greenColor = Color(0xff225637);
+Color greenLightColor = Color(0xff2BFE50);
 
 //TextStyle
 TextStyle titleText = GoogleFonts.poppins(

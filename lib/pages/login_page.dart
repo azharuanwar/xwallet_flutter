@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:xwallet/pages/home_page.dart';
 import 'package:xwallet/theme.dart';
 
 class LoginPage extends StatelessWidget {
@@ -135,23 +136,29 @@ class LoginPage extends StatelessWidget {
             Center(
               child: Column(
                 children: [
-                  Container(
-                    // margin: EdgeInsets.only(top: 14),
-                    width: 315,
-                    height: 55,
-                    decoration: BoxDecoration(
-                      color: primaryColor,
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    child: Align(
-                      alignment: Alignment.center,
-                      child: Text(
-                        'Login',
-                        style: textGeneral.copyWith(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w600,
-                            color: whiteColor),
-                        textAlign: TextAlign.center,
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => HomePage()));
+                    },
+                    child: Container(
+                      // margin: EdgeInsets.only(top: 14),
+                      width: 315,
+                      height: 55,
+                      decoration: BoxDecoration(
+                        color: primaryColor,
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          'Login',
+                          style: textGeneral.copyWith(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600,
+                              color: whiteColor),
+                          textAlign: TextAlign.center,
+                        ),
                       ),
                     ),
                   ),
