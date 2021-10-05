@@ -12,6 +12,7 @@ Color greyColor = Color(0xffF4F5FC);
 Color darkColor = Color(0xff3D4960);
 Color greenColor = Color(0xff225637);
 Color greenLightColor = Color(0xff2BFE50);
+Color redCircleColor = Color(0xffFD5301);
 
 //TextStyle
 TextStyle titleText = GoogleFonts.poppins(

@@ -219,6 +219,9 @@ class HomePage extends StatelessWidget {
               'Last Transaction',
               style: titleText,
             ),
+            SizedBox(
+              height: 11,
+            ),
             Container(
               width: MediaQuery.of(context).size.width - (2 * 30),
               decoration: BoxDecoration(
@@ -229,9 +232,15 @@ class HomePage extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 17),
                 child: Column(
                   children: [
-                    TransactionWidget(),
-                    TransactionWidget(),
-                    TransactionWidget(),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    TransactionWidget('Steam Game', 95000, true),
+                    TransactionWidget('Paypal', 95000, false),
+                    TransactionWidget('Steam Game', 95000, false),
+                    TransactionWidget('Steam Game', 95000, false),
+                    TransactionWidget('Steam Game', 95000, false),
+                    TransactionWidget('Steam Game', 95000, true),
                   ],
                 ),
               ),
@@ -241,14 +250,68 @@ class HomePage extends StatelessWidget {
       );
     }
 
+    Widget customNavBar() {
+      return Stack(
+        children: [
+          Container(
+            margin: EdgeInsets.only(top: 33),
+            width: MediaQuery.of(context).size.width,
+            height: 85,
+            // color: whiteColor,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(16),
+                topRight: Radius.circular(16),
+              ),
+              color: whiteColor,
+            ),
+            child: Row(
+              children: [
+                Container(
+                  margin: EdgeInsets.only(left: 36, bottom: 25),
+                  // height: ,
+                  child: Column(
+                    children: [
+                      Image.asset('assets/icon_nav_home.png'),
+                      Text('Home')
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Center(
+            child: Container(
+              width: 66,
+              height: 66,
+              // color: primaryColor,
+              decoration: BoxDecoration(
+                color: primaryColor,
+                borderRadius: BorderRadius.circular(19),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(17),
+                child: Image.asset(
+                  'assets/icon_pay.png',
+                  width: 32,
+                ),
+              ),
+            ),
+          ),
+        ],
+      );
+    }
+
     return Scaffold(
       backgroundColor: backgroundColor2,
+      resizeToAvoidBottomInset: false,
       body: ListView(
         children: [
           header(),
           cardBalance(),
           payBill(),
           lastTransaction(),
+          customNavBar(),
         ],
       ),
     );
