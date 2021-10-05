@@ -263,7 +263,7 @@ class HomePage extends StatelessWidget {
                 topLeft: Radius.circular(16),
                 topRight: Radius.circular(16),
               ),
-              color: whiteColor,
+              color: Color(0xff3E3939),
             ),
             child: Row(
               children: [
@@ -271,9 +271,20 @@ class HomePage extends StatelessWidget {
                   margin: EdgeInsets.only(left: 36, bottom: 25),
                   // height: ,
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Image.asset('assets/icon_nav_home.png'),
-                      Text('Home')
+                      Image.asset(
+                        'assets/icon_nav_home.png',
+                        width: 24,
+                        height: 24,
+                      ),
+                      SizedBox(
+                        height: 3,
+                      ),
+                      Text(
+                        'Home',
+                        style: textGeneral.copyWith(color: whiteColor),
+                      ),
                     ],
                   ),
                 ),
