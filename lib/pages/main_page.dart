@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:xwallet/pages/home_page.dart';
 
@@ -36,60 +38,68 @@ class _MainPageState extends State<MainPage> {
         borderRadius: BorderRadius.vertical(
           top: Radius.circular(30),
         ),
-        child: BottomAppBar(
-          shape: CircularNotchedRectangle(),
-          notchMargin: 12,
-          clipBehavior: Clip.antiAlias,
-          child: BottomNavigationBar(
-            backgroundColor: backgroundColor1,
-            currentIndex: currentIdx,
-            type: BottomNavigationBarType.fixed,
-            items: [
-              BottomNavigationBarItem(
-                icon: Container(
-                  margin: EdgeInsets.only(top: 10, bottom: 10),
-                  child: Image.asset(
-                    'assets/icon_nav_home.png',
-                    width: 24,
-                    color: currentIdx == 0 ? whiteColor : Color(0xffA3A4A8),
+        child: BackdropFilter(
+          filter: ImageFilter.blur(
+            sigmaX: 10,
+            sigmaY: 10,
+          ),
+          child: BottomAppBar(
+            shape: CircularNotchedRectangle(),
+            notchMargin: 12,
+            clipBehavior: Clip.antiAlias,
+            child: BottomNavigationBar(
+              backgroundColor: backgroundColor1,
+              currentIndex: currentIdx,
+              type: BottomNavigationBarType.fixed,
+              items: [
+                BottomNavigationBarItem(
+                  icon: Container(
+                    margin: EdgeInsets.only(top: 10, bottom: 10),
+                    child: Image.asset(
+                      'assets/icon_nav_home.png',
+                      width: 24,
+                      color: currentIdx == 0 ? whiteColor : Color(0xffA3A4A8),
+                    ),
                   ),
+                  label: 'Home',
                 ),
-                label: 'Home',
-              ),
-              BottomNavigationBarItem(
-                icon: Container(
-                  margin: EdgeInsets.only(top: 10, bottom: 10),
-                  child: Image.asset(
-                    'assets/icon_nav_invest.png',
-                    width: 24,
-                    color: currentIdx == 0 ? whiteColor : Color(0xffA3A4A8),
+                BottomNavigationBarItem(
+                  icon: Container(
+                    margin: EdgeInsets.only(top: 10, bottom: 10),
+                    child: Image.asset(
+                      'assets/icon_nav_invest.png',
+                      width: 24,
+                      color: currentIdx == 0 ? whiteColor : Color(0xffA3A4A8),
+                    ),
                   ),
+                  label: 'Invest',
                 ),
-                label: 'Invest',
-              ),
-              BottomNavigationBarItem(
-                icon: Container(
-                  margin: EdgeInsets.only(top: 10, bottom: 10),
-                  child: Image.asset(
-                    'assets/icon_nav_notif.png',
-                    width: 24,
-                    color: currentIdx == 0 ? whiteColor : Color(0xffA3A4A8),
+                BottomNavigationBarItem(
+                  icon: Container(
+                    margin: EdgeInsets.only(top: 10, bottom: 10),
+                    child: Image.asset(
+                      'assets/icon_nav_notif.png',
+                      width: 24,
+                      color: currentIdx == 0 ? whiteColor : Color(0xffA3A4A8),
+                    ),
                   ),
+                  label: 'Inbox',
                 ),
-                label: 'Inbox',
-              ),
-              BottomNavigationBarItem(
-                icon: Container(
-                  margin: EdgeInsets.only(top: 10, bottom: 10),
-                  child: Image.asset(
-                    'assets/icon_nav_profile.png',
-                    width: 24,
-                    color: currentIdx == 0 ? whiteColor : Color(0xffA3A4A8),
+                BottomNavigationBarItem(
+                  icon: Container(
+                    margin: EdgeInsets.only(top: 10, bottom: 10),
+                    child: Image.asset(
+                      'assets/icon_nav_profile.png',
+                      width: 24,
+                      color: currentIdx == 0 ? whiteColor : Color(0xffA3A4A8),
+                    ),
                   ),
+                  label: 'Profile',
                 ),
-                label: 'Profile',
-              ),
-            ],
+              ],
+              selectedLabelStyle: textGeneral.copyWith(fontSize: 10),
+              selectedItemColor: whiteColor,
+            ),
           ),
         ),
       );
@@ -109,6 +119,8 @@ class _MainPageState extends State<MainPage> {
 
     return Scaffold(
       backgroundColor: backgroundColor2,
+      resizeToAvoidBottomInset: false,
+      extendBody: true,
       body: body(),
       bottomNavigationBar: customNavBar(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
