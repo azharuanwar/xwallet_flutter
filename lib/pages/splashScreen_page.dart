@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:xwallet/pages/login_page.dart';
+import 'package:xwallet/pages/main_page.dart';
 import 'package:xwallet/theme.dart';
 
 class SplashScreenPage extends StatefulWidget {
@@ -13,9 +14,9 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
   @override
   void initState() {
     Future.delayed(
-        Duration(seconds: 3),
+        Duration(seconds: 5),
         () => Navigator.push(
-            context, MaterialPageRoute(builder: (context) => LoginPage())));
+            context, MaterialPageRoute(builder: (context) => MainPage())));
     super.initState();
   }
 

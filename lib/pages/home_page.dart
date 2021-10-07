@@ -250,69 +250,6 @@ class HomePage extends StatelessWidget {
       );
     }
 
-    Widget customNavBar() {
-      return Stack(
-        children: [
-          Container(
-            margin: EdgeInsets.only(top: 33),
-            width: MediaQuery.of(context).size.width,
-            height: 85,
-            // color: whiteColor,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(16),
-                topRight: Radius.circular(16),
-              ),
-              color: Color(0xff3E3939),
-            ),
-            child: Row(
-              children: [
-                Container(
-                  margin: EdgeInsets.only(left: 36, bottom: 25),
-                  // height: ,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        'assets/icon_nav_home.png',
-                        width: 24,
-                        height: 24,
-                      ),
-                      SizedBox(
-                        height: 3,
-                      ),
-                      Text(
-                        'Home',
-                        style: textGeneral.copyWith(color: whiteColor),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Center(
-            child: Container(
-              width: 66,
-              height: 66,
-              // color: primaryColor,
-              decoration: BoxDecoration(
-                color: primaryColor,
-                borderRadius: BorderRadius.circular(19),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(17),
-                child: Image.asset(
-                  'assets/icon_pay.png',
-                  width: 32,
-                ),
-              ),
-            ),
-          ),
-        ],
-      );
-    }
-
     return Scaffold(
       backgroundColor: backgroundColor2,
       resizeToAvoidBottomInset: false,
@@ -322,9 +259,11 @@ class HomePage extends StatelessWidget {
           cardBalance(),
           payBill(),
           lastTransaction(),
-          customNavBar(),
+          // customNavigationBar(),
         ],
       ),
+      // bottomNavigationBar: customNavBar(),
+      // bottomNavigationBar: customNavigationBar(),
     );
   }
 }
