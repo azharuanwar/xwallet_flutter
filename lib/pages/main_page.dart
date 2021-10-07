@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:xwallet/pages/home_page.dart';
+import 'package:xwallet/pages/transaction_success_page.dart';
 
 import '../theme.dart';
 
@@ -51,6 +52,12 @@ class _MainPageState extends State<MainPage> {
               backgroundColor: backgroundColor1,
               currentIndex: currentIdx,
               type: BottomNavigationBarType.fixed,
+              onTap: (value) {
+                print(value);
+                setState(() {
+                  currentIdx = value;
+                });
+              },
               items: [
                 BottomNavigationBarItem(
                   icon: Container(
@@ -110,6 +117,11 @@ class _MainPageState extends State<MainPage> {
         case 0:
           return HomePage();
           // ignore: dead_code
+          break;
+
+        case 1:
+          return TransactionSuccessPage();
+// ignore: dead_code
           break;
 
         default:
