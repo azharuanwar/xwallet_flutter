@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:xwallet/pages/animation_page.dart';
 import 'package:xwallet/pages/home_page.dart';
 import 'package:xwallet/pages/transaction_success_page.dart';
 
@@ -17,18 +18,26 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     Widget payButtom() {
-      return Container(
-        width: 66,
-        height: 66,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(19),
-          color: primaryColor,
-        ),
-        child: Padding(
-          padding: EdgeInsets.all(17),
-          child: Image.asset(
-            'assets/icon_pay.png',
-            width: 32,
+      return GestureDetector(
+        onTap: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => TransactionSuccessPage()));
+        },
+        child: Container(
+          width: 66,
+          height: 66,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(19),
+            color: primaryColor,
+          ),
+          child: Padding(
+            padding: EdgeInsets.all(17),
+            child: Image.asset(
+              'assets/icon_pay.png',
+              width: 32,
+            ),
           ),
         ),
       );
@@ -46,10 +55,12 @@ class _MainPageState extends State<MainPage> {
           ),
           child: BottomAppBar(
             shape: CircularNotchedRectangle(),
+            color: backgroundColor1,
             notchMargin: 12,
             clipBehavior: Clip.antiAlias,
             child: BottomNavigationBar(
-              backgroundColor: backgroundColor1,
+              elevation: 0,
+              backgroundColor: backgroundColor1.withOpacity(0.8),
               currentIndex: currentIdx,
               type: BottomNavigationBarType.fixed,
               onTap: (value) {
@@ -82,6 +93,12 @@ class _MainPageState extends State<MainPage> {
                   label: 'Invest',
                 ),
                 BottomNavigationBarItem(
+                    icon: Container(
+                      width: 24,
+                      margin: EdgeInsets.only(top: 30, bottom: 10),
+                    ),
+                    label: 'Pay'),
+                BottomNavigationBarItem(
                   icon: Container(
                     margin: EdgeInsets.only(top: 10, bottom: 10),
                     child: Image.asset(
@@ -106,6 +123,8 @@ class _MainPageState extends State<MainPage> {
               ],
               selectedLabelStyle: textGeneral.copyWith(fontSize: 10),
               selectedItemColor: whiteColor,
+              unselectedLabelStyle: textGeneral.copyWith(fontSize: 10),
+              unselectedItemColor: Color(0xffA3A4A8),
             ),
           ),
         ),
@@ -120,7 +139,7 @@ class _MainPageState extends State<MainPage> {
           break;
 
         case 1:
-          return TransactionSuccessPage();
+          return AnimationPage();
 // ignore: dead_code
           break;
 

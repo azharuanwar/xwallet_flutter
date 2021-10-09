@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:rive/rive.dart';
 import 'package:xwallet/pages/home_page.dart';
+import 'package:xwallet/pages/main_page.dart';
 import 'package:xwallet/theme.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
+
+  @override
+  _LoginPageState createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  // RiveAnimationController? _animationController;
 
   @override
   Widget build(BuildContext context) {
@@ -139,7 +148,7 @@ class LoginPage extends StatelessWidget {
                   InkWell(
                     onTap: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => HomePage()));
+                          MaterialPageRoute(builder: (context) => MainPage()));
                     },
                     child: Container(
                       // margin: EdgeInsets.only(top: 14),

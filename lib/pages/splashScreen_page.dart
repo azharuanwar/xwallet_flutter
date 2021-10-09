@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:xwallet/pages/login_page.dart';
+// import 'package:xwallet/pages/login_page.dart';
 import 'package:xwallet/pages/main_page.dart';
 import 'package:xwallet/theme.dart';
 
@@ -16,7 +17,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
     Future.delayed(
         Duration(seconds: 3),
         () => Navigator.push(
-            context, MaterialPageRoute(builder: (context) => MainPage())));
+            context, MaterialPageRoute(builder: (context) => LoginPage())));
     super.initState();
   }
 
