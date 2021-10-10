@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:xwallet/pages/animation_page.dart';
 import 'package:xwallet/pages/home_page.dart';
+import 'package:xwallet/pages/invest_page.dart';
 import 'package:xwallet/pages/transaction_success_page.dart';
 
 import '../theme.dart';
@@ -139,8 +140,13 @@ class _MainPageState extends State<MainPage> {
           break;
 
         case 1:
+          return InvestPage();
+          // ignore: dead_code
+          break;
+
+        case 2:
           return AnimationPage();
-// ignore: dead_code
+          // ignore: dead_code
           break;
 
         default:
