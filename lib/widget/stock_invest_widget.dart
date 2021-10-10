@@ -1,3 +1,4 @@
+import 'package:charts_flutter/flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:xwallet/theme.dart';
 
@@ -21,35 +22,80 @@ class StockMaterial extends StatelessWidget {
         color: backgroundColor1,
       ),
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 12, vertical: 16),
+        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SizedBox(
+                  child: Row(
+                    children: [
+                      Container(
+                        width: 6,
+                        height: 6,
+                        decoration: BoxDecoration(
+                            shape: BoxShape.circle, color: greenLightColor),
+                      ),
+                      SizedBox(
+                        width: 6,
+                      ),
+                      Text(
+                        'BTC',
+                        style: textGeneral.copyWith(
+                            fontSize: 12,
+                            color: whiteColor,
+                            fontWeight: FontWeight.w800),
+                      ),
+                    ],
+                  ),
+                ),
+                Text(
+                  '+4,59%',
+                  style: nominalText,
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 8,
+            ),
+            Row(
               children: [
                 Container(
-                  width: 6,
-                  height: 6,
+                  width: 48,
+                  height: 48,
                   decoration: BoxDecoration(
-                      shape: BoxShape.circle, color: greenLightColor),
+                      border: Border.all(
+                        color: blueOcean,
+                      ),
+                      borderRadius: BorderRadius.all(Radius.circular(50))),
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                      'Buy',
+                      style: titleText.copyWith(fontSize: 12),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
                 ),
                 SizedBox(
-                  width: 6,
+                  width: 12,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'BTC',
+                      'From :',
                       style:
-                          textGeneral.copyWith(fontSize: 12, color: whiteColor),
+                          textGeneral.copyWith(fontSize: 12, color: greyColor),
                     ),
                     Text(
-                      '+4,25%',
-                      style: nominalText,
-                    )
+                      '\$32,903',
+                      style: titleText.copyWith(fontSize: 12),
+                    ),
                   ],
-                ),
+                )
               ],
             ),
           ],
